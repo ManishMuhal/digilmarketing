@@ -1,8 +1,16 @@
-// next.config.js
-const nextConfig = {
-  compiler: {
-    removeConsole: true,
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  output: "standalone",
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  images: {
+    unoptimized: true,
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
